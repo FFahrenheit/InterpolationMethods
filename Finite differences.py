@@ -2,6 +2,8 @@ epsilon = 4
 
 def main():
     print("\t\tDiferencias finitas\n\n")
+
+    "       EJEMPLO PARA DATA MAS GRANDE      "
     data = [[50,24.94],
            [60,30.11],
            [70,36.05],
@@ -9,7 +11,16 @@ def main():
            [90,50.57],
            [100,59.30]]
     
-    value = 85
+    value = 64
+
+    #        Xn    f(Xn)
+    data = [[20,17.535],
+           [40,55.324],
+           [60,149.380],
+           [80,355.110]]
+
+	#   Valor a encontrar
+    value = 30
 
     dif = getFiniteDifferences(data)
 
@@ -54,20 +65,15 @@ def factorial(n):
     return t
 
 def getMultiplers(s,n,direction):
-    t = 1
-    for i in range(n+1):
+    t = s
+    print("%.4f"%s,end='')
+    for i in range(1,n+1):
         if direction:
             t *= (s-i)
-            if i == 0:
-                print("%.4f"%s,end='')
-            else:
-                print("(%.4f - %d)"%(s,i),end='')
+            print("(%.4f - %d)"%(s,i),end='')
         else:
             t *= (s+i)
-            if i == 0:
-                print("%.4f"%s,end='')
-            else:
-                print("(%.4f + %d)"%(s,i),end='')
+            print("(%.4f + %d)"%(s,i),end='')
     return t
 
 def getS(data,value,off,direction):
