@@ -8,14 +8,20 @@ def main():
     
     limits = [0 for i in range(2)]
 
+    #Prueba
+    data = [8,10,10,20,76,238]
+    limits[0] = 0
+    limits[1] = 5
+    n=5
+
     limits[0] = 0
     limits[1] = math.pi/2  #Limites de valores
     
     n = 4 # = input("Ingrese n:")
 
-    h = round((limits[1] - limits[0])/n,epsilon)
-
     data = getDots(n,limits)
+
+    h = round((limits[1] - limits[0])/n,epsilon)
 
     print("*"*10,"Trapecio compuesto","*"*10)
     getCompositeTrapeze(data,h)
@@ -51,7 +57,7 @@ def getSimpson1over3(data,h):
         print(data[i],end='')
         total += 4*data[i]
     print(") + 2(",end='')
-    for i in range(2,n-2,2):
+    for i in range(2,n-1,2):
         if i != 2:
             print(" + ",end='')
         print(data[i],end='')
@@ -74,12 +80,12 @@ def getSimpson3over8(data,h):
             print(data[i],end='')
             total += 3*data[i]
     print(") + 2(",end='')
-    for i in range(1,n-3,1):
-        if i != 1:
-            print(" + ",end='')
-        print(data[i*3],end='')
-        total += 2*data[i*3]
-    
+    for i in range(1,n-3):
+        if i != n/3:
+            if i != 1:
+                print(" + ",end='')
+            print(data[i*3],end='')
+            total += 2*data[i*3]
     print(f") + {data[n-1]}) = ",end='')
     total += data[n-1]
     total = round(3/8*total*h,epsilon)
