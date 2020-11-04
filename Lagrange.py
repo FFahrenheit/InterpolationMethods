@@ -10,6 +10,11 @@ def main():
 	#   Valor a encontrar
 	x = 30
 
+	data = [[1.9,14.4],[3.7,28.7],[5.5,43.1],[7.3,52.7]]
+
+	x = 4.5
+
+	
 	n = len(data)
 	polynomials = n-1
 
