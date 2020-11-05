@@ -9,13 +9,15 @@ def main():
     print("\t\tDiferenciacion numerica\n\n")
     
     #        Xn    f(Xn)
-    data = [[2000,13.782],
-           [2200,12.577],
-           [2400,11.565],
-           [2600,10.704]]
+    data = [[1,3],
+           [1.8,4.34536],
+           [3,6.57735],
+           [4.2,8.88725],
+           [5,10.44721],
+           [6.5,13.29223]]
 
 	#   Valor a encontrar
-    x = 2300
+    x = 3.7
 
     n = len(data)
     polynomials = n-1
@@ -50,7 +52,7 @@ def getOffset(data,x):
     for i in range(n-1):
         if data[i][0] < x and x < data[i+1][0]:
             return i
-    if data[0][0] > value:
+    if data[0][0] > x:
         return 0
     else:
         return n-1
@@ -112,7 +114,10 @@ def calculateDividedDiferences(data):
 def printMatrix(data):
     for i in range(len(data)):
         for j in range(len(data[0])):
-            print("%0.4e"%data[i][j],end='\t')
+            if round(data[i][j],epsilon)==0 and data[i][j] != 0:
+                print("%0.4e"%data[i][j],end='\t')
+            else:
+                print("%0.4f"%data[i][j],end='\t')
         print("\n")
 
 def requestData():
