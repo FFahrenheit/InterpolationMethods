@@ -3,17 +3,17 @@ epsilon = 4
 def main():
     
     #yprime = "y - x**2 + 1"
-    yprime = "xi - yi"
+    yprime = "yi - xi**2+1"
     
     x0 = 0
-    y0 = 2    #Corresponde a y(x0) = y0
+    y0 = 0.5    #Corresponde a y(x0) = y0
     
-    xf = 1    #Valor de x que buscamos para y'(x)
+    xf = 2    #Valor de x que buscamos para y'(x)
     
-    n = 5  #Intervalos 
+    n = 4  #Intervalos 
 
     h = round((xf-x0)/n,epsilon)
-
+    print(f"h = ({xf}-{x0})/{n}")
     print(f"h = {h}")
 
     xn = x0 
@@ -28,7 +28,7 @@ def main():
         print(f"x[{i+1}] = {xi} + {h} = {xn}")
 
         yn = round(yi + h * eval(yprime),epsilon)
-        print(f"{yi} + ({h})({xi}-{yi}) = {yn}")
+        print(f"y[{i+1}] = {yi} + ({h})({yi}-{xi}^2 + 1) = {yn}")
 
 
 if __name__ == "__main__":
