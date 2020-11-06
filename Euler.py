@@ -1,3 +1,4 @@
+#Modificar yprime para evaluar la operación  y la linea 32 para impresion
 epsilon = 4
 
 def main():
