@@ -81,7 +81,7 @@ def getSimpson3over8(data,h):
             total += 3*data[i]
     print(") + 2(",end='')
     for i in range(1,n-3):
-        if i != n/3:
+        if i*3 < n:
             if i != 1:
                 print(" + ",end='')
             print(data[i*3],end='')
@@ -110,6 +110,5 @@ def getFunction(x):
     return math.exp(x) *math.sin(x)
 
 
-    
 if __name__ == "__main__":
 	main()

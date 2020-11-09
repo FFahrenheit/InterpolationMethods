@@ -1,5 +1,5 @@
 #Modificar getFunction segun la operacion y los print para mayor entendimiento xd 
-epsilon = 6
+epsilon = 4
 
 def main():    
     x0 = 0
@@ -27,16 +27,16 @@ def main():
         ynt = yi + h*(getFunction(xi,yi))
         ynt = round(ynt,epsilon)
 
-        print(f"y^[{i+1}] = {yi} + ({h})({yi} - {xi}^2 + 1) = {ynt}")
+        print(f"y^[{i+1}] = {yi} + ({h})({printFunction(xi,yi)}) = {ynt}")
 
         yn = yi + (h/2)*(getFunction(xi,yi)+getFunction(xn,ynt))
         yn = round(yn,epsilon)
 
-        print(f"y[{i+1}] = {yi} + ({h}/2)(({yi} - {xi}^2 + 1) + ({ynt} - {xn}^2 + 1)) = {yn}")
+        print(f"y[{i+1}] = {yi} + ({h}/2)({printFunction(xi,yi)} + {printFunction(xn,ynt)}) = {yn}")
 
 
 def printFunction(x,y):
-    print(f"({y} - {x}^2 + 1")
+    return f"({y} - {x}^2 + 1)"
 
 def getFunction(x,y):
     return y - x**2 + 1
